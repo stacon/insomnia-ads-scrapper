@@ -1,0 +1,20 @@
+{
+  "name": "insomnia-web-scrapper",
+  "version": "0.1.0",
+  "description": "Scraps products with requested keywords",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Constantinos Stathis",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "node-notifier": "^5.4.0",
+    "nodemailer": "^5.1.1",
+    "scrape-it": "^5.1.4"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.12.0"
+  }
+}
