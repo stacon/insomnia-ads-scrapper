@@ -1,3 +1,8 @@
+const {
+  email,
+  adsCheckIntervalInMinutes,
+  windowsPopUpNotifications,
+} = require('./../configuration.json');
 /**
  * Class Log for logging specific information in the console
  */
@@ -24,6 +29,28 @@ class Log {
   */
   static error(text) {
     return Log.general(`ERROR: ${text}`);
+  }
+
+  /**
+  * Server Initialization message
+  */
+  static serverInitialization() {
+    console.log('\n');
+    Log.general('Server is starting up...');
+    Log.general('Server configuration');
+    Log.general(`E-mail to notify: ${email}`);
+    Log.general(`Ads Check Interval: ${adsCheckIntervalInMinutes}`);
+    if (windowsPopUpNotifications.enabled) {
+      Log.general('Notifications are enabled with' +
+        (windowsPopUpNotifications.withSound ? '' : 'out') +
+        ' sound'
+      );
+    }
+    Log.general(
+        'This window needs to remain open (or minimized)' +
+        ', in order to keep the service running'
+    );
+    console.log('\n');
   }
 }
 

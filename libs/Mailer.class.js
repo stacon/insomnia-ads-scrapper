@@ -1,5 +1,6 @@
 const Log = require('./Log.class');
 const nodemailer = require('nodemailer');
+const config = require('./../configuration.json');
 
 const transporter = nodemailer.createTransport({
   host: 'mail.stacon.space',
@@ -12,8 +13,8 @@ const transporter = nodemailer.createTransport({
 });
 
 const mailOptions = {
-  from: 'Insomnia Ads Notifier <the.joker.cards@gmail.com>',
-  to: 'constantinos-@hotmail.com',
+  from: 'Insomnia Ads Notifier <insomniads@stacon.space>',
+  to: config.email,
 };
 
 /**
@@ -29,7 +30,7 @@ class Mailer {
       'Τίτλος: ' + ad.title + '\n' +
       'Τιμή: ' + ad.price + '\n' +
       'Πωλητής: ' + ad.seller + '\n' +
-      'Σύνδεσμος αγγελίας: ' +ad.link
+      'Σύνδεσμος αγγελίας: ' +ad.link + '\n\n'
     )).join('');
 
     const mailOptionsToSend = {
