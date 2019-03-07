@@ -15,7 +15,7 @@ class SystemNotification {
       title: `New Insomnia Ads`,
       message:
         numberOfNewAds +
-        'new ads appeared at Insomnia Nintendo ' +
+        'new ads appeared at Insomnia ' +
         categoryName,
       sound: windowsPopUpNotifications.withSound,
     });

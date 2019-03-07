@@ -46,6 +46,9 @@ class Log {
         ' sound'
       );
     }
+    Log.general(
+        'This windows needs to stay open, in order to keep the service running'
+    );
     console.log('\n');
   }
 }
