@@ -53,7 +53,8 @@ class Log {
         ', in order to keep the service running'
     );
     console.log('\n');
-    Mailer.sendCustomMail('Server Started');
+    const mailer = new Mailer;
+    mailer.sendCustomMail('Insomnia Ads Notification Server Started');
   }
 }
 
