@@ -30,7 +30,7 @@ class Mailer {
       'Τίτλος: ' + ad.title + '\n' +
       'Τιμή: ' + ad.price + '\n' +
       'Πωλητής: ' + ad.seller + '\n' +
-      'Σύνδεσμος αγγελίας: ' +ad.link
+      'Σύνδεσμος αγγελίας: ' +ad.link + '\n\n'
     )).join('');
 
     const mailOptionsToSend = {
