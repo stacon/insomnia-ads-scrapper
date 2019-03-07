@@ -47,7 +47,8 @@ class Log {
       );
     }
     Log.general(
-        'This windows needs to stay open, in order to keep the service running'
+        'This window needs to remain open (or minimized)' +
+        ', in order to keep the service running'
     );
     console.log('\n');
   }
