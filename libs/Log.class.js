@@ -3,6 +3,8 @@ const {
   adsCheckIntervalInMinutes,
   windowsPopUpNotifications,
 } = require('./../configuration.json');
+
+const Mailer = require('./Mailer.class');
 /**
  * Class Log for logging specific information in the console
  */
@@ -51,6 +53,7 @@ class Log {
         ', in order to keep the service running'
     );
     console.log('\n');
+    Mailer.sendCustomMail('Server Started');
   }
 }
 

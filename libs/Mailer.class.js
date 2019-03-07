@@ -48,6 +48,22 @@ class Mailer {
             `Sending email for ${categoryName} ads failed reason: ${e}`
         ));
   }
+  /**
+   * @param {*} subject
+   * @param {*} text
+   */
+  sendCustomMail(subject = '', text = '') {
+    const mailOptionsToSend = {
+      ...mailOptions,
+      subject,
+      text,
+    };
+
+    transporter.sendMail(mailOptionsToSend)
+        .catch((e) => Log.error(
+            `Sending email failed reason: ${e}`
+        ));
+  }
 }
 
 module.exports = Mailer;
