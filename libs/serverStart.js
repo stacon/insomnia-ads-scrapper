@@ -17,9 +17,9 @@ const serverStart = () => {
       newDataHandler(c.data.ads, c.data.categoryName, dataScraped)));
   }, adsCheckIntervalInMinutes * 60000);
 
-  const http = require("http");
+  const https = require("https");
   setInterval(() => {
-    http.get("https://intense-ridge-99767.herokuapp.com");
+    https.get("https://intense-ridge-99767.herokuapp.com");
   }, 300000)
 };
 
