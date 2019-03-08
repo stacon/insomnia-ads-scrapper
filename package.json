@@ -10,6 +10,7 @@
   "author": "Constantinos Stathis",
   "license": "MIT",
   "dependencies": {
+    "http": "0.0.0",
     "lodash": "^4.17.11",
     "newrelic": "^5.6.0",
     "node-notifier": "^5.4.0",
