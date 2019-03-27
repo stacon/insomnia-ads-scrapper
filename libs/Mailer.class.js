@@ -2,19 +2,23 @@ const Log = require('./Log.class');
 const nodemailer = require('nodemailer');
 const config = require('./../configuration.json');
 
+const {
+  host, port, secure, username: user, password: pass, receiverEmail,
+} = config.transporter;
+
 const transporter = nodemailer.createTransport({
-  host: 'mail.stacon.space',
-  port: 465,
-  secure: true,
+  host,
+  port,
+  secure,
   auth: {
-    user: 'insomniads@stacon.space',
-    pass: '5sKT2HMzTF5m',
+    user,
+    pass,
   },
 });
 
 const mailOptions = {
-  from: 'Insomnia Ads Notifier <insomniads@stacon.space>',
-  to: config.email,
+  from: `Insomnia Ads Notifier <${user}>`,
+  to: receiverEmail,
 };
 
 /**

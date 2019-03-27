@@ -1,14 +1,21 @@
 {
-  "email": "constantinos-@hotmail.com",
+  "receiverEmail": "constantinos-@hotmail.com",
   "adUrls": [
     "https://www.insomnia.gr/classifieds/category/32-nintendo-consoles/?filter=classifieds_type_1",
     "https://www.insomnia.gr/classifieds/category/96-nintendo-games/?filter=classifieds_type_1",
     "https://www.insomnia.gr/classifieds/category/58-%CF%80%CE%B5%CF%81%CE%B9%CF%86%CE%B5%CF%81%CE%B5%CE%B9%CE%B1%CE%BA%CE%AC/",
     "https://www.insomnia.gr/classifieds/category/34-%CE%B4%CE%B9%CE%AC%CF%86%CE%BF%CF%81%CE%B1/?filter=classifieds_type_1"
   ],
-  "adsCheckIntervalInMinutes" : 5,
-  "windowsPopUpNotifications" : {
-    "enabled" : true,
+  "adsCheckIntervalInMinutes": 5,
+  "windowsPopUpNotifications": {
+    "enabled": true,
     "withSound": false
+  },
+  "transporter": {
+    "host": "mail.stacon.space",
+    "port": 465,
+    "secure": true,
+    "username": "insomniads@stacon.space",
+    "password": "5sKT2HMzTF5m"
   }
 }
