@@ -1,5 +1,5 @@
 const {
-  email,
+  receiverEmail,
   adsCheckIntervalInMinutes,
   windowsPopUpNotifications,
 } = require('./../configuration.json');
@@ -36,12 +36,12 @@ class Log {
   /**
   * Server Initialization message
   */
-  static serverInitialization() {
+  static serverInitialization(callBackFn = null) {
     console.log('\n');
     Log.general('Server is starting up...');
     Log.general('Server configuration');
-    Log.general(`E-mail to notify: ${email}`);
-    Log.general(`Ads Check Interval: ${adsCheckIntervalInMinutes}`);
+    Log.general(`E-mail to notify: ${receiverEmail}`);
+    Log.general(`Ads Check Interval (in minutes): ${adsCheckIntervalInMinutes}`);
     if (windowsPopUpNotifications.enabled) {
       Log.general('Notifications are enabled with' +
         (windowsPopUpNotifications.withSound ? '' : 'out') +
@@ -53,8 +53,7 @@ class Log {
         ', in order to keep the service running'
     );
     console.log('\n');
-    const mailer = new Mailer;
-    mailer.sendCustomMail('Insomnia Ads Notification Server Started');
+    callBackFn ? callBackFn() : null;
   }
 }
 

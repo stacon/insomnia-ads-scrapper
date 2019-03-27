@@ -68,6 +68,14 @@ class Mailer {
             `Sending email failed reason: ${e}`
         ));
   }
+
+  /**
+   * Server start up email
+   */
+  serverStartUpMail() {
+    const mailer = new Mailer;
+    mailer.sendCustomMail('Insomnia Ads Notification Server Started');
+  }
 }
 
 module.exports = Mailer;

@@ -1,4 +1,8 @@
 {
+  "herokuApp": {
+    "enabled" : true,
+    "url": "https://intense-ridge-99767.herokuapp.com"
+  },
   "receiverEmail": "constantinos-@hotmail.com",
   "adUrls": [
     "https://www.insomnia.gr/classifieds/category/32-nintendo-consoles/?filter=classifieds_type_1",

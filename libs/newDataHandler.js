@@ -16,12 +16,13 @@ const newDataHandler = (
   if (numberOfNewAds === 0) return;
 
   dataScraped[categoryName] = incomingAds;
+
+  // Notifications, Logs and e-mails are disabled on the first fetch
+  if (firstTime) return;
   Log.general(
       `${numberOfNewAds} NEW ${categoryName} ads. Sending notification...`
   );
   SystemNotification.newAds(numberOfNewAds, categoryName);
-
-  if (firstTime) return;
   const mailer = new Mailer;
   mailer.sendNewAds(categoryName, newAds);
 };
