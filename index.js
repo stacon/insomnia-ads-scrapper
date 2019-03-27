@@ -1,4 +1,3 @@
-require('newrelic');
 const {serverStart} = require('./libs/serverStart');
 
 const http = require('http');
