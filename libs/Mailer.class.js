@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const config = require('./../configuration.json');
 
 const {
-  host, port, secure, username: user, password: pass, receiverEmail,
+  host, port, secure, username: user, password: pass,
 } = config.transporter;
 
 const transporter = nodemailer.createTransport({
@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
 
 const mailOptions = {
   from: `Insomnia Ads Notifier <${user}>`,
-  to: receiverEmail,
+  to: config.receiverEmail,
 };
 
 /**
@@ -29,7 +29,7 @@ class Mailer {
    * @param {String} categoryName Category name string
    * @param {Ads} newAds A number of new Ads
    */
-  sendNewAds(categoryName, newAds) {
+  static sendNewAds(categoryName, newAds) {
     const text = newAds.map((ad) => (
       'Τίτλος: ' + ad.title + '\n' +
       'Τιμή: ' + ad.price + '\n' +
@@ -56,7 +56,7 @@ class Mailer {
    * @param {*} subject
    * @param {*} text
    */
-  sendCustomMail(subject = '', text = '') {
+  static sendCustomMail(subject = '', text = '') {
     const mailOptionsToSend = {
       ...mailOptions,
       subject,
@@ -64,6 +64,7 @@ class Mailer {
     };
 
     transporter.sendMail(mailOptionsToSend)
+        .then(() => Log.general(`Custom mail with subject: '${subject}' sent successfully`))
         .catch((e) => Log.error(
             `Sending email failed reason: ${e}`
         ));
@@ -72,9 +73,8 @@ class Mailer {
   /**
    * Server start up email
    */
-  serverStartUpMail() {
-    const mailer = new Mailer;
-    mailer.sendCustomMail('Insomnia Ads Notification Server Started');
+  static serverStartUpMail() {
+    Mailer.sendCustomMail('Insomnia Ads Notification Server Started');
   }
 }
 

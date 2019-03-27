@@ -1,6 +1,7 @@
 const scrapeInsomniaAdsFrom = require('./scrapeInsomniaAdsFrom');
 const { herokuApp } = require('../configuration.json');
 const Log = require('./Log.class');
+const Mailer = require('./Mailer.class');
 const https = require("https");
 const { newDataHandler } = require('./newDataHandler');
 const {
@@ -9,7 +10,7 @@ const {
 } = require('./../configuration.json');
 
 const serverStart = () => {
-  Log.serverInitialization(Log.serverStartUpMail);
+  Log.serverInitialization(Mailer.serverStartUpMail);
   const dataScraped = {};
   adUrls.forEach((url) => scrapeInsomniaAdsFrom(url).then((c) =>
     newDataHandler(c.data.ads, c.data.categoryName, dataScraped, true)));

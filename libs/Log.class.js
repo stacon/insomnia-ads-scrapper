@@ -4,7 +4,6 @@ const {
   windowsPopUpNotifications,
 } = require('./../configuration.json');
 
-const Mailer = require('./Mailer.class');
 /**
  * Class Log for logging specific information in the console
  */

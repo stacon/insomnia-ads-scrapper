@@ -23,8 +23,7 @@ const newDataHandler = (
       `${numberOfNewAds} NEW ${categoryName} ads. Sending notification...`
   );
   SystemNotification.newAds(numberOfNewAds, categoryName);
-  const mailer = new Mailer;
-  mailer.sendNewAds(categoryName, newAds);
+  Mailer.sendNewAds(categoryName, newAds);
 };
 
 module.exports = {newDataHandler};
