@@ -1,6 +1,6 @@
 {
   "herokuApp": {
-    "enabled" : true,
+    "enabled" : false,
     "url": "https://intense-ridge-99767.herokuapp.com"
   },
   "receiverEmail": "constantinos-@hotmail.com",

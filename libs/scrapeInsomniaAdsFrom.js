@@ -1,5 +1,9 @@
 const scrapeIt = require('scrape-it');
 
+/**
+ * @param {String} url input ads url from insomnia to scrap from
+ * @returns {any} ads in the object form described as scrapeIt parameneter
+ */
 const scrapeInsomniaAdsFrom = (url) => scrapeIt(url, {
   categoryName: 'h1.ipsType_pageTitle',
   ads: {

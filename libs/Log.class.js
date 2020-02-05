@@ -21,7 +21,7 @@ class Log {
   * @param {String} text
   */
   static general(text) {
-    console.log(new Date().toUTCString() + ' - ' + text);
+    console.log(`${new Date().toLocaleString()} - ${text}`);
   }
 
   /**

@@ -7,7 +7,7 @@ const {windowsPopUpNotifications} = require('./../configuration.json');
 class SystemNotification {
   /**
    * @param {Number} numberOfNewAds A number representing the number of new ads
-   * @param {*} categoryName Category name string
+   * @param {String} categoryName Category name string
    */
   static newAds(numberOfNewAds, categoryName) {
     if (!windowsPopUpNotifications.enabled) return;

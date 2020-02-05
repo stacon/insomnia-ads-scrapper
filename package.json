@@ -10,10 +10,10 @@
   "author": "Constantinos Stathis",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.11",
-    "node-notifier": "^5.4.0",
+    "lodash": "^4.17.15",
+    "node-notifier": "^5.4.3",
     "nodemailer": "^5.1.1",
-    "scrape-it": "^5.1.4"
+    "scrape-it": "^5.2.3"
   },
   "devDependencies": {
     "eslint-config-google": "^0.12.0"
